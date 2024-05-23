@@ -2,6 +2,7 @@ import {Dish} from "../dish/component.jsx";
 import {Counter} from "../counter/component.jsx";
 
 export const Menu = ({ menu }) => {
+    if(!menu?.length) return
     return (
         <div>
             <h3>Menu</h3>
@@ -10,7 +11,7 @@ export const Menu = ({ menu }) => {
                     <li>
                         <div>
                             <Dish dish={dish}/>
-                            <Counter/>
+                            <Counter max={5} min={0}/>
                         </div>
                     </li>
                 ))

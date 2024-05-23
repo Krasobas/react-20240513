@@ -9,9 +9,9 @@ export const Menu = ({ menu }) => {
             <ul>
                 {menu.map((dish) => (
                     <li>
-                        <div>
+                        <div key={dish.id}>
                             <Dish dish={dish}/>
-                            <Counter max={5} min={0}/>
+                            <Counter max={5} min={0} defaultValue={0} />
                         </div>
                     </li>
                 ))

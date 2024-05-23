@@ -1,7 +1,7 @@
 import {useCount} from "../../hooks/useCount.js";
 
-export const Counter = ({max, min}) => {
-    const {count, increment, decrement} = useCount();
+export const Counter = ({max, min, defaultValue}) => {
+    const {count, increment, decrement} = useCount(defaultValue);
     return (
         <>
             <button onClick={() => count > min && decrement(count)}>-</button>

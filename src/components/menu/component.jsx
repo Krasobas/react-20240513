@@ -11,7 +11,7 @@ export const Menu = ({ menu }) => {
                     <li>
                         <div key={dish.id}>
                             <Dish dish={dish}/>
-                            <Counter max={5} min={0} defaultValue={0} />
+                            <Counter max={5} min={0} initialValue={0} />
                         </div>
                     </li>
                 ))

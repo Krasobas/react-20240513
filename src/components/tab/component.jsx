@@ -1,4 +1,4 @@
 
-export const Tab = ({index, onClick}) => {
-    return <button onClick={() => onClick(index)}>{index}</button>;
+export const Tab = ({title, onClick, isActive}) => {
+    return <button onClick={onClick} disabled={isActive}>{title}</button>;
 }

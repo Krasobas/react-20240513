@@ -1,17 +1,14 @@
 import {Dish} from "../dish/component.jsx";
-import {Counter} from "../counter/component.jsx";
 
 export const Menu = ({ menu }) => {
+    if(!menu?.length) return
     return (
         <div>
             <h3>Menu</h3>
             <ul>
                 {menu.map((dish) => (
                     <li>
-                        <div>
-                            <Dish dish={dish}/>
-                            <Counter/>
-                        </div>
+                        <Dish dish={dish} key={dish.id}/>
                     </li>
                 ))
                 }

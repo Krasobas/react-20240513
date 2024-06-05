@@ -3,6 +3,7 @@ import {restaurants} from "../../constants/mock.js";
 import {RestaurantTabs} from "../restaurant-tabs/component.jsx";
 import {Restaurant} from "../restaurant/component.jsx";
 
+const RESTAURANT_COPIES = 10;
 export const Restaurants = () => {
     const [activeRestaurantIndex, setActiveRestaurantIndex] = React.useState(0);
     if(!restaurants?.length) return;
@@ -15,7 +16,8 @@ export const Restaurants = () => {
                 restaurants={restaurants}
                 onTabClick={setActiveRestaurantIndex}
             />
-            <Restaurant restaurant={activeRestaurants} />
+            {Array.from({ length: RESTAURANT_COPIES }).map(() => <Restaurant restaurant={activeRestaurants} />)}
+
         </div>
     )
 }

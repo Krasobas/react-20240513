@@ -1,6 +1,6 @@
 import {useState, useEffect} from "react";
 
-export const ReviewButtons = ({max= 5, onClick}) => {
+export const ReviewButtons = ({max= 5, onClick, value}) => {
     const [numbers, setNumbers] = useState([]);
 
     useEffect(() => {
@@ -9,7 +9,12 @@ export const ReviewButtons = ({max= 5, onClick}) => {
     }, [max]);
     return (
             <div>
-                {numbers.map((number, i) => (<button key={i} onClick={() => onClick(number)}>{number}</button>))}
+                {numbers.map((number, i) => (
+                    <button
+                        key={i}
+                        onClick={() => onClick(number)}
+                        disabled={value === number }>{number}</button>
+                ))}
             </div>
     )
 }

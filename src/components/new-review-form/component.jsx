@@ -31,9 +31,7 @@ function reducer(state, {type, payload} = {}) {
 
 export const NewReviewForm = (props) => {
     const [form, dispatch] = useReducer(reducer, DEFAULT_FORM_VALUE)
-    const formRef = useRef(form);
-    console.log(formRef.current);
-
+    console.log(form);
     return (
         <div>
             <div>
@@ -58,7 +56,10 @@ export const NewReviewForm = (props) => {
             </div>
             <div>
                 <span>Rating</span>
-                <ReviewButtons onClick={(value) =>
+                <ReviewButtons
+                    value={form.rating}
+                    max={10}
+                    onClick={(value) =>
                     dispatch({type: SET_RATING, payload: value})}/>
             </div>
             <button onClick={() => dispatch({type: RESET_FORM})}>Submit</button>
